@@ -146,25 +146,21 @@ function es4() {
   console.log();
   console.log('Esercizio 4: numeri compresi tra un minimo e un massimo');
 
-  function startFun() {
-    console.log(splitter(5, 50, [2, 4, 5, 7, 45, 23, 78, 13, 34]));
-  }
-
   function splitter(min, max, arr) {
 
     console.log('Arr normale: ' + arr);
-    var arrNumber = arr;
-    var localMin = min;
+    let arrNumber = arr;
+    let localMin = min;
     console.log(`Valore minimo = ${min}`);
 
-    var localMax = max;
+    let localMax = max;
     console.log(`Valore massimo = ${max}`);
 
 
-    var newArr = []
-    for (var i = 0; i < arrNumber.length; i++) {
+    let newArr = []
+    for (let i = 0; i < arrNumber.length; i++) {
 
-      var number = arrNumber[i]
+      const number = arrNumber[i]
 
       if (number >= localMin && number <= localMax) {
         newArr.push(number)
@@ -172,10 +168,16 @@ function es4() {
 
     }
 
+    newArr.sort(function(a, b) {
+      return a - b;
+    });
+
+    console.log(newArr);
+
     return newArr;
   }
 
-  startFun();
+  splitter(5, 50, [2, 4, 5, 7, 45, 23, 78, 13, 34]);
 
 }
 
