@@ -29,7 +29,6 @@ function es1() {
   console.log(`La somma dei numeri: ${sum}
 La media dei numeri: ${medium}`);
 
-
 }
 
 function es2() {
@@ -96,13 +95,55 @@ function es2() {
 
 }
 
+function es3() {
 
+  console.log();
+  console.log('Esercizio 3');
+
+  let teams = [
+    {
+      'name': 'Napoli',
+      'score': 0,
+      'penality': 0
+    },
+    {
+      'name': 'Roma',
+      'score': 0,
+      'penality': 0
+    },
+    {
+      'name': 'Torino',
+      'score': 0,
+      'penality': 0
+    },
+    {
+      'name': 'Juventus',
+      'score': 0,
+      'penality': 0
+    }
+  ]
+
+  const newteams = [];
+
+  for (let i = 0; i < teams.length; i++) {
+
+    const team = teams[i];
+    team.score = getRandom(0, 50);
+    team.penality = getRandom(0, 15);
+
+    let { name, penality } = team;
+    let newObj = {name, penality };
+    newteams.push(newObj);
+  }
+
+  console.log(teams);
+  console.log(newteams);
+}
 
 function init() {
   es1();
   es2();
-  // es3();
-
+  es3();
 }
 
 $(document).ready(init);
